@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  {% if form.errors %}
+  <p class="error">Sorry, that is not a valid username or password</p>
+  {% endif %}
+   <div class="container">
+
+      <form class="form-signin" action="" method="post">
+        <legend class="form-signin-heading">Please sign in</legend>
+        <input type="text" name"username" class="input-xlarge" placeholder="Username" id="username">
+        <input type="password" name="password" value="" class="input-xlarge" placeholder="Password" id="password">
+        <label class="checkbox">
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+        <button class="btn btn-primary" type="submit" value="login">Sign in &raquo;</button>
+      </form>
+
+    </div> <!-- /container -->
+
+{% endblock %}

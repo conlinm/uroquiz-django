@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form class="form-horizontal" id="registerHere" method='post' action=''>
+<fieldset>
+ 
+<legend>Registration</legend>
+ 
+<div class="control-group">
+	<label class="control-label">First Name</label>
+	<div class="controls">
+		<input type="text" class="input-xlarge" id="fname" name="fname" placeholder="First name">
+	</div>
+</div>
+ 
+<div class="control-group">
+	<label class="control-label">Last Name</label>
+	<div class="controls">
+		<input type="text" class="input-xlarge" id="lname" name="lname" placeholder="Last name">
+	</div>
+</div>
+<div class="control-group">
+	<label class="control-label">Email</label>
+	<div class="controls">
+		<input type="text" class="input-xlarge" id="user_email" name="user_email" placeholder="Email address">
+	</div>
+</div>
+<div class="control-group">
+	<label class="control-label">Username</label>
+	<div class="controls">
+		<input type="text" class="input-xlarge" id="uname" name="uname" placeholder="Username">
+	</div>
+</div>
+<div class="control-group">
+	<label class="control-label">Password</label>
+	<div class="controls">
+		<input type="text" class="input-xlarge" id="pword" name="pword" placeholder="Password">
+	</div>
+</div>
+<div class="control-group">
+	<label class="control-label">Confirm Password</label>
+	<div class="controls">
+		<input type="text" class="input-xlarge" id="cpword" name="cpword" placeholder="Password">
+	</div>
+</div>
+<div class="control-group">
+	<label class="control-label"></label>
+	<div class="controls">
+		<button type="submit" class="btn btn-primary" >Create My Account &raquo;</button>
+	</div>
+</div>
+ 
+</fieldset>
+</form>
+
+{% endblock %}
+

@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block title %}Create a Quiz{% endblock %}
+
+{% block content %}
+
+	{% if error %}
+	    <p style="color: blue;"> Please submit a search term.</p>
+	{% endif %}
+	<form class="form-horizontal" action="/search/" method="get">
+		<legend>Create a Quiz:</legend>
+		<div class="control-group">
+			<label class="control-label" for="q">Search term</label>
+			<div class="controls">
+				<input type="text" name="q" placeholder="Search term" autocomplete="on"/>
+			</div>
+		</div>	
+		<div class="control-group">
+			<label class="control-label" for="yr">Year</label>
+			<div class="controls">
+				<!--input type="text" name="yr" placeholder="Year"-->
+				<select name="yr">
+					<option></option>
+					<option>2012</option>
+					<option>2011</option>
+					<option>2010</option>
+					<option>2009</option>
+					<option>2007</option>
+					<option>2006</option>
+					<option>2005</option>
+					<option>2004</option>
+					<option>2003</option>
+				</select>
+				
+			</div>
+		</div>	
+		<div class="control-group">
+			<label class="control-label" for="ct">Category</label>
+			<div class="controls">
+				<!--input type="text" name="ct" placeholder="Category" autocomplete="on"/-->
+				<select name="ct">
+					<option></option>
+					<option>Calculous Disease</option>
+					<option>Congenital Anomalies, Embryology, Anatomy</option>
+					<option>Fluid & Electrolyte,Transplantation, Hypertension, Vasc.Disease, Nephrology</option>
+					<option>Infection & Inflammatory Disease</option>
+					<option>Neoplasm</option>
+					<option>Neurogenic Bladder, Voiding Dysfunction, Incontinence</option>
+					<option>Obstructive Uropathy</option>
+					<option>Physiology, Immunology</option>
+					<option>Sexual Dysfunction, Endocrinopathy, Fertility Problems</option>
+					<option>Trauma & Fistulae</option>
+					<option>Urinary Diversion</option>
+				</select>
+			</div>
+		</div>	
+		<div class="controls">
+			<button type="submit" class="btn btn-primary">Fetch  &raquo;</button>
+		</div>			
+	</form>
+
+{% endblock %}

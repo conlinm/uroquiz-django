@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+<!-- {% block title %}Search Results{% endblock %} -->
+
+{% block content %}
+
+	<p>Question set for <strong>{{ q }} {{ yr }} {{ ct }}</strong>:</p>
+
+	{% if question %}
+	<div class="container">
+		<div class="span10">
+	    <ul>
+	    	{% for Uroquiz in question %}
+	    	<h3>{{ question.number }}</h3>
+	    		{% if Uroquiz.image %}
+	    		<p> {{ Uroquiz.image }}</p>
+	    		{% endif %}
+	    	<p><b>Question: </b> {{ Uroquiz.question }}</p>
+	    	<p>A. {{ Uroquiz.a }}</p>
+	    	<p>B. {{ Uroquiz.b }}</p>
+	    	<p>C. {{ Uroquiz.c }}</p>
+	    	<p>D. {{ Uroquiz.d }}</p>
+	    	<p>E. {{ Uroquiz.e }}</p>
+	    	<p><b>Answer: </b>{{ Uroquiz.answer }}</p>
+	    	<p><b>Explanation: </b>{{ Uroquiz.exp }}</p>
+	    	<p><b>Year of question: </b>{{ Uroquiz.year }}</p>
+	    	<p><b>Category: </b>{{ Uroquiz.cat }}</p>
+	    	<p><b>Area: </b>{{ Uroquiz.area }}</p>
+	    	{% endfor %}
+	    </ul>
+		</div>
+	 </div>
+	 <!--div class="pagination">
+    <ul>
+
+        <li class="prev{% if current_page == 1 %} disabled{% endif %}">
+            <a href="?q={{ q }}&yr={{ yr }}&ct={{ ct }}&page={{ question.previous_page_number }}">&laquo;</a>
+        </li>
+
+        {% if pages_back %}
+            <li>
+                <a href="?page={{ pages_back }}">&hellip;</a>
+            </li>
+        {% endif %}
+
+        {% for p in pages_shown %}
+            <li{% if current_page == p %} class="active"{% endif %}>
+                <a href="{% if current_page == p %}#{% else %}?page={{ p }}{% endif %}">{{ p }}</a>
+            </li>
+        {% endfor %}
+
+        {% if pages_forward %}
+            <li>
+                <a href="?page={{ pages_forward }}">&hellip;</a>
+            </li>
+        {% endif %}
+
+        <li class="last{% if current_page == num_pages %} disabled{% endif %}">
+            <a href="?q={{ q }}&yr={{ yr }}&ct={{ ct }}&page={{ question.next_page_number }}">&raquo;</a>
+        </li>
+
+    </ul>
+
+</div-->
+<div class="pagination">
+    <span class="step-links">
+        {% if question.has_previous %}
+            <a href="?q={{ q }}&yr={{ yr }}&ct={{ ct }}&page={{ question.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ question.number }} of {{ question.paginator.num_pages }}
+        </span>
+
+        {% if question.has_next %}
+            <a href="?q={{ q }}&yr={{ yr }}&ct={{ ct }}&page={{ question.next_page_number }}">next</a>
+        {% endif %}
+    </span>
+</div>
+	{% else %}
+	    <p>No questions matched your search criteria</p>
+	{% endif %}
+{% endblock %}

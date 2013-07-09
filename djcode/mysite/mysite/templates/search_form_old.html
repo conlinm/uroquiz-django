@@ -1,0 +1,30 @@
+<html>
+<head>
+	<h2>question search</h2>
+	<style type="text/css">
+	.styleform label{float:left;}
+	.styleform input{margin-left:200px;} /* this gives space for the label on the left */
+	.styleform.clear{clear:both;} 
+	}
+
+    </style>
+</head>
+<body>
+	<h2>question search</h2>
+	{% if error %}
+	    <p style="color: blue;"> Please submit a search term.</p>
+	{% endif %}
+	<div class="container">
+		<form action="/search/" method="get">
+
+			<fieldset style="width: 375px;">
+				<legend>Generate a Quiz:</legend>
+				<label>Search term:</label><input type="text" name="q" /><div class="clear"></div>
+				<label>Year:</label><input type="text" name="yr" /><div class="clear"></div>
+				<label>Category:</label><input type="text" name="cat" /><div class="clear"></div>
+			</fieldset>
+			<input type="submit" value="Fetch">
+		</form>
+    </div>
+</body>
+</html>

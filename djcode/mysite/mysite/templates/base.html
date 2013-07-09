@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+{% load bootstrap_toolkit %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Uroquiz</title>
+    <meta name="description" content="">
+    <meta name="author" content="Michael Conlin">
+    {% bootstrap_stylesheet_tag %}
+    <link type="text/css" rel="stylesheet"  href="{{ STATIC_URL }}site-specific.css" />
+    <style type="text/css">
+      body {
+            padding-top: 100px;
+        } 
+    </style>
+    <!--[if lt IE 9]>
+    <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+    {% bootstrap_javascript_tag "dropdown" %}
+    {% block extra_head %}{% endblock %}
+</head>
+
+<body>
+<!--div>
+    <img src="home/conlinm/djcode/mysite/static/images/paper_fibers.png" alt="">
+</div-->
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="brand" href="/">UroQuiz</a>
+            <ul class="nav">
+                <li><a href="{% url uroquiz.views.home %}" class="">Home</a></li>
+                <li><a href="{% url uroquiz.views.search %}">Quiz</a></li>
+                <li><a href="{% url uroquiz.views.results %}">Results</a></li>
+                <li><a href="{% url uroquiz.views.register %}">Register</a></li>
+            </ul>
+            <ul class="nav pull-right">
+            	<li><a href="{% url uroquiz.views.login %}">Log in</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+    {% block content %}Empty page{% endblock %}
+
+    <p><hr></p>
+
+    <!--footer class="row">
+        
+        <div class="span12" style="text-align:right">
+            <p>
+                Uroquiz is built with <a href="https://www.djangoproject.com">Djagno, </a><a href="http://twitter.github.com/bootstrap/">Bootstrap, </a>and <a href="https://github.com/dyve/django-bootstrap-toolkit">Djagno-Bootstrap-Toolkit</a> &copy; <a href="http://twitter.com/michaelconlin">Michael Conlin</a> 2013
+            </p>
+            <p></p>
+        </div>
+    </footer-->
+
+</div> <!-- container -->
+<div class="navbar navbar-inverse navbar-fixed-bottom">
+    <div class="navbar-inner">
+        <div class="container" align="center" style="font-size: 12px; color: #B0B0B0">
+            <ul class="nav pull-right">
+                <p>
+                    Uroquiz &copy; <a href="http://twitter.com/michaelconlin">Michael Conlin</a> 2013 
+                </p>
+            </ul>
+        </div>
+    </div> 
+</div>
+</body>
+</html>
